@@ -241,8 +241,8 @@ $('.addButton').on('click', function () {
   }
 
   hashMap.push({
-    logo: simplifyUrl(url)[0],
-    logoType: 'text',
+    logo: url + '/favicon.ico',
+    logoType: 'image',
     url: url
   });
   render();
@@ -251,18 +251,16 @@ $('.addButton').on('click', function () {
 window.onbeforeunload = function () {
   var string = JSON.stringify(hashMap);
   localStorage.setItem('x', string);
-};
+}; // $(document).on('keypress', (e) => {
+//     // const key = e.key;  可简写为下行
+//     const { key } = e
+//     for (let i = 0; i < hashMap.length; i++) {
+//         if (simplifyUrl(hashMap[i].url)[0].toUpperCase() === key.toUpperCase()) {
+//             window.open(hashMap[i].url)
+//         }
+//     }
+// })
 
-$(document).on('keypress', function (e) {
-  // const key = e.key;  可简写为下行
-  var key = e.key;
-
-  for (var i = 0; i < hashMap.length; i++) {
-    if (simplifyUrl(hashMap[i].url)[0].toUpperCase() === key.toUpperCase()) {
-      window.open(hashMap[i].url);
-    }
-  }
-});
 /* <li>
                 <a href="https://www.acfun.cn">
                     <div class="site">
@@ -283,4 +281,4 @@ $(document).on('keypress', function (e) {
                 </a>
             </li> */
 },{"./images/acf.jpg":"stNw","./images/WeiBo.jpg":"HhjD","./images/wyy.png":"pyVY","./images/youKu.png":"B4IS","./images/zhiHu.png":"htuh","./images/tou.png":"CaZV","./images/bi.jpg":"Xxt0","./images/jd.jpg":"iTzN","./images/G.jpg":"Bx9E"}]},{},["epB2"], null)
-//# sourceMappingURL=main.16a9594c.js.map
+//# sourceMappingURL=main.8619d1e2.js.map

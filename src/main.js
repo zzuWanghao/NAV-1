@@ -143,9 +143,10 @@ $('.addButton').on('click', () => {
     if (url.indexOf('http') !== 0) {
         url = 'https://' + url
     }
+
     hashMap.push({
-        logo: simplifyUrl(url)[0],
-        logoType: 'text',
+        logo: url + '/favicon.ico',
+        logoType: 'image',
         url: url
     })
 
@@ -159,21 +160,19 @@ window.onbeforeunload = () => {
 
 }
 
-$(document).on('keypress', (e) => {
+// $(document).on('keypress', (e) => {
 
-    // const key = e.key;  可简写为下行
-    const { key } = e
+//     // const key = e.key;  可简写为下行
+//     const { key } = e
+//     for (let i = 0; i < hashMap.length; i++) {
 
-    for (let i = 0; i < hashMap.length; i++) {
+//         if (simplifyUrl(hashMap[i].url)[0].toUpperCase() === key.toUpperCase()) {
 
-        if (simplifyUrl(hashMap[i].url)[0].toUpperCase() === key.toUpperCase()) {
+//             window.open(hashMap[i].url)
+//         }
+//     }
 
-            window.open(hashMap[i].url)
-        }
-    }
-
-
-})
+// })
 
 
 /* <li>
